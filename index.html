@@ -1,34 +1,91 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Asistente del Asador</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Asistente del Asador</title>
+<style>
+  body {
+    margin: 0;
+    font-family: "Inter", Arial, sans-serif;
+    background-color: #fff7e6;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  header {
+    background-color: #d64512;
+    color: #fff;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  main {
+    max-width: 600px;
+    width: 100%;
+    margin-top: 2rem;
+    background-color: #fffef8;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 0 8px rgba(0,0,0,0.05);
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #d64512;
+  }
+
+  p {
+    font-size: 1rem;
+    color: #555;
+  }
+
+  .widget-container {
+    margin-top: 2rem;
+  }
+</style>
 </head>
-<body style="font-family: Arial, sans-serif; text-align: center; padding: 2rem;">
-  <h1>Asistente del Asador</h1>
-  <p>Pulsa el botón para dictar tu pedido.</p>
 
-  <vapi-widget
-    mode="voice"
-    theme="dark"
-    base-color="#000000"
-    accent-color="#14B8A6"
-    button-base-color="#000000"
-    button-accent-color="#ffffff"
-    radius="large"
-    size="full"
-    position="bottom-right"
-    main-label="HABLA"
-    start-button-text="Inicia"
-    end-button-text="Finaliza"
-    require-consent="true"
-    local-storage-key="vapi_widget_consent"
-    show-transcript="true"
-    public-key="ee1bc0ed-ac24-465f-886c-9be16b240207"
-    assistant-id="68464860-434c-4d9f-a969-eabdcf58ddb3"
-  ></vapi-widget>
+<body>
+  <header>
+    🔥 Asador de Jairo 🔥
+  </header>
 
-  <script src="https://unpkg.com/@vapi-ai/client-sdk-react/dist/embed/widget.umd.js" async type="text/javascript"></script>
+  <main>
+    <h1>Asistente Virtual</h1>
+    <p>Pulsa el botón para dictar tu pedido al asistente del asador.</p>
+
+    <div class="widget-container">
+      <vapi-widget
+        mode="voice"
+        theme="dark"
+        base-color="#000000"
+        accent-color="#14B8A6"
+        button-base-color="#d64512"
+        button-accent-color="#ffffff"
+        radius="large"
+        size="compact"
+        position="bottom-center"
+        main-label="HABLA"
+        start-button-text="Inicia"
+        end-button-text="Finaliza"
+        require-consent="true"
+        local-storage-key="vapi_widget_consent"
+        show-transcript="true"
+        public-key="8979c83f-8212-442e-b402-18ca93291334"
+        assistant-id="68464860-434c-4d9f-a969-eabdcf58ddb3"
+      ></vapi-widget>
+    </div>
+  </main>
+
+<script src="https://unpkg.com/@vapi-ai/client-sdk-react/dist/embed/widget.umd.js" async type="text/javascript"></script>
 </body>
 </html>

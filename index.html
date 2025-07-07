@@ -3,88 +3,93 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Asistente del Asador</title>
+<title>🔥 Asador de Jairo 🔥</title>
 <style>
   body {
+    font-family: Arial, sans-serif;
+    background: #fff7eb;
     margin: 0;
-    font-family: "Inter", Arial, sans-serif;
-    background-color: #fff7e6;
+    padding: 0;
     color: #333;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
   }
 
   header {
-    background-color: #d64512;
+    background: #d94d1a;
     color: #fff;
-    width: 100%;
     padding: 1rem;
     text-align: center;
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: bold;
   }
 
-  main {
-    max-width: 600px;
-    width: 100%;
-    margin-top: 2rem;
-    background-color: #fffef8;
-    border-radius: 8px;
-    padding: 1.5rem;
-    box-shadow: 0 0 8px rgba(0,0,0,0.05);
+  .container {
     text-align: center;
+    padding: 1rem;
   }
 
-  h1 {
-    font-size: 1.8rem;
+  .subtitle {
+    color: #d94d1a;
+    font-size: 1.2rem;
     margin-bottom: 0.5rem;
-    color: #d64512;
   }
 
-  p {
-    font-size: 1rem;
+  .description {
     color: #555;
+    margin-bottom: 1rem;
   }
 
   .widget-container {
-    margin-top: 2rem;
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+
+  @media (max-width: 600px) {
+    .widget-container {
+      padding: 0.5rem;
+      max-width: 100%;
+    }
+
+    vapi-widget {
+      width: 100%;
+      height: calc(100vh - 180px);
+    }
   }
 </style>
 </head>
-
 <body>
-  <header>
-    🔥 Asador de Jairo 🔥
-  </header>
 
-  <main>
-    <h1>Asistente Virtual</h1>
-    <p>Pulsa el botón para dictar tu pedido al asistente del asador.</p>
+<header>🔥 Asador de Jairo 🔥</header>
 
-    <div class="widget-container">
-      <vapi-widget
-        mode="voice"
-        theme="dark"
-        base-color="#000000"
-        accent-color="#14B8A6"
-        button-base-color="#d64512"
-        button-accent-color="#ffffff"
-        radius="large"
-        size="compact"
-        position="bottom-center"
-        main-label="HABLA"
-        start-button-text="Inicia"
-        end-button-text="Finaliza"
-        require-consent="true"
-        local-storage-key="vapi_widget_consent"
-        show-transcript="true"
-        public-key="8979c83f-8212-442e-b402-18ca93291334"
-        assistant-id="68464860-434c-4d9f-a969-eabdcf58ddb3"
-      ></vapi-widget>
-    </div>
-  </main>
+<div class="container">
+  <div class="subtitle">Asistente Virtual</div>
+  <div class="description">
+    Pulsa el botón para dictar tu pedido al asistente del asador.
+  </div>
+
+  <div class="widget-container">
+    <vapi-widget
+      mode="voice"
+      theme="dark"
+      base-color="#000000"
+      accent-color="#14B8A6"
+      button-base-color="#000000"
+      button-accent-color="#ffffff"
+      radius="large"
+      size="full"
+      position="bottom-right"
+      main-label="HABLA"
+      start-button-text="Inicia"
+      end-button-text="Finaliza"
+      require-consent="true"
+      local-storage-key="vapi_widget_consent"
+      show-transcript="true"
+      public-key="8979c83f-8212-442e-b402-18ca93291334"
+      assistant-id="68464860-434c-4d9f-a969-eabdcf58ddb3">
+    </vapi-widget>
+  </div>
+</div>
 
 <script src="https://unpkg.com/@vapi-ai/client-sdk-react/dist/embed/widget.umd.js" async type="text/javascript"></script>
 </body>

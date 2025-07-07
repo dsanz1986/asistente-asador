@@ -5,12 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>🔥 Asador de Jairo 🔥</title>
 <style>
-  body {
-    font-family: Arial, sans-serif;
-    background: #fff7eb;
+  html, body {
     margin: 0;
     padding: 0;
+    background: #fff7eb;
+    font-family: Arial, sans-serif;
     color: #333;
+    height: 100%;
+    overflow-x: hidden;
   }
 
   header {
@@ -23,8 +25,8 @@
   }
 
   .container {
-    text-align: center;
     padding: 1rem;
+    text-align: center;
   }
 
   .subtitle {
@@ -39,21 +41,26 @@
   }
 
   .widget-container {
-    position: relative;
-    max-width: 500px;
+    width: 100%;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 0;
+  }
+
+  vapi-widget {
+    display: block;
+    width: 100vw;
+    max-width: 100%;
   }
 
   @media (max-width: 600px) {
     .widget-container {
-      padding: 0.5rem;
-      max-width: 100%;
+      padding: 0;
     }
 
     vapi-widget {
-      width: 100%;
-      height: calc(100vh - 180px);
+      width: 100vw;
+      height: calc(100vh - 100px);
     }
   }
 </style>
@@ -85,7 +92,7 @@
       require-consent="true"
       local-storage-key="vapi_widget_consent"
       show-transcript="true"
-      public-key="ee1bc0ed-ac24-465f-886c-9be16b240207"
+      public-key="8979c83f-8212-442e-b402-18ca93291334"
       assistant-id="68464860-434c-4d9f-a969-eabdcf58ddb3">
     </vapi-widget>
   </div>
